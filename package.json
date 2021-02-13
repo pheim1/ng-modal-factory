@@ -2,6 +2,10 @@
   "name": "ng-modal-factory",
   "version": "0.0.1",
   "author": "Philipp Heim",
+  "license": "MIT",
+  "keywords": ["angular"],
+  "homepage": "https://github.com/pheim1/ng-modal-factory#readme",
+  "bugs": "https://github.com/pheim1/ng-modal-factory/issues",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
