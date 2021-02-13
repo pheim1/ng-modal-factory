@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { ModalFactoryService } from './modal-factory.service';
 
 @Component({
-  selector: 'lib-modal-factory-outlet',
+  selector: 'lib-ng-modal-factory-outlet',
   template: `
     <ng-container #outlet></ng-container>
   `,

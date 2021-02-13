@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "author": "Philipp Heim",
   "license": "MIT",
-  "keywords": ["angular"],
+  "keywords": [
+    "angular"
+  ],
   "homepage": "https://github.com/pheim1/ng-modal-factory#readme",
   "bugs": "https://github.com/pheim1/ng-modal-factory/issues",
   "scripts": {
@@ -28,6 +30,11 @@
     "@angular/platform-browser": "~11.2.0",
     "@angular/platform-browser-dynamic": "~11.2.0",
     "@angular/router": "~11.2.0",
+    "@cds/core": "^5.0.1",
+    "@clr/angular": "^5.0.1",
+    "@clr/icons": "^5.0.1",
+    "@clr/ui": "^5.0.1",
+    "@webcomponents/webcomponentsjs": "^2.5.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
