@@ -12,7 +12,9 @@ export class AlertModalComponent {
 
   constructor(@Inject('buttons') public buttons: ClarityModalButton[], 
               @Optional()
-              @Inject('bodyTemplate') public bodyTemplate: TemplateRef<any>) {}
+              @Inject('bodyTemplate') public bodyTemplate: TemplateRef<any>,
+              @Optional()
+              @Inject('headline') public headline: string) {}
 
   public buttonClick(button: ClarityModalButton) {
     button.click();

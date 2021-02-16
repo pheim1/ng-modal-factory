@@ -61,6 +61,7 @@ export interface BaseModalData
 export interface AlertModalData extends BaseModalData
 {
   inputs: {
+    headline: string,
     bodyTemplate: TemplateRef<any>,
     buttons: ClarityModalButton[]
   };

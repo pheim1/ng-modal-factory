@@ -16,6 +16,7 @@ export class ModalFactoryOutletComponent implements OnInit {
   constructor(private modalFactoryService: ModalFactoryService) {}
 
   ngOnInit(): void {
+    // TODO: Sink subscription on destroy.
     this.modalFactoryService.modalObservable.subscribe((openModalData) => {
       this.launchModal(openModalData);
     });

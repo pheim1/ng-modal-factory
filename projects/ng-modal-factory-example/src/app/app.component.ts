@@ -18,6 +18,7 @@ export class AppComponent {
     this.modalFactoryService.openNewAlertModal({
       component: AlertModalComponent,
       inputs: {
+        headline: "My modal headline...",
         bodyTemplate: this.modalBody,
         buttons: [
           {
