@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ModalFactoryService } from './modal-factory.service';
 
 @Component({
@@ -9,17 +10,21 @@ import { ModalFactoryService } from './modal-factory.service';
   styles: [
   ]
 })
-export class ModalFactoryOutletComponent implements OnInit {
+export class ModalFactoryOutletComponent implements OnInit, OnDestroy {
 
   @ViewChild('outlet', { read: ViewContainerRef }) outlet: ViewContainerRef;
+  private modalFactoryServiceSubscription: Subscription;
 
   constructor(private modalFactoryService: ModalFactoryService) {}
 
   ngOnInit(): void {
-    // TODO: Sink subscription on destroy.
-    this.modalFactoryService.modalObservable.subscribe((openModalData) => {
+    this.modalFactoryServiceSubscription = this.modalFactoryService.modalObservable.subscribe((openModalData) => {
       this.launchModal(openModalData);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.modalFactoryServiceSubscription.unsubscribe();
   }
 
   private launchModal(openModalData: OpenModalData) {
