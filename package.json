@@ -17,8 +17,8 @@
     "e2e": "ng e2e",
     "lib:build": "ng build ng-modal-factory --prod",
     "lib:dev": "ng build ng-modal-factory --prod --watch",
-    "lib:publish": "cd dist\\ng-modal-factory & npm publish",
-    "lib:bp": "ng build ng-modal-factory --prod & cd dist\\ng-modal-factory & npm publish"
+    "lib:publish": "cd dist\\ng-modal-factory && npm publish",
+    "lib:bp": "ng build ng-modal-factory --prod && cd dist/ng-modal-factory && npm publish"
   },
   "private": true,
   "dependencies": {

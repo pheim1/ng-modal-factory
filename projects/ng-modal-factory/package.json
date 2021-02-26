@@ -1,11 +1,12 @@
 {
   "name": "ng-modal-factory",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "author": "Philipp Heim",
   "license": "MIT",
   "keywords": ["angular"],
   "homepage": "https://github.com/pheim1/ng-modal-factory#readme",
   "bugs": "https://github.com/pheim1/ng-modal-factory/issues",
+  "private": false,
   "peerDependencies": {
     "@angular/common": "^11.2.0",
     "@angular/core": "^11.2.0",
