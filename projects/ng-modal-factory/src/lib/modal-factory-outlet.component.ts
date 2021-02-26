@@ -1,24 +1,30 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ModalFactoryService } from './modal-factory.service';
 
 @Component({
-  selector: 'lib-modal-factory-outlet',
+  selector: 'ng-modal-factory-outlet',
   template: `
     <ng-container #outlet></ng-container>
   `,
   styles: [
   ]
 })
-export class ModalFactoryOutletComponent implements OnInit {
+export class ModalFactoryOutletComponent implements OnInit, OnDestroy {
 
   @ViewChild('outlet', { read: ViewContainerRef }) outlet: ViewContainerRef;
+  private modalFactoryServiceSubscription: Subscription;
 
   constructor(private modalFactoryService: ModalFactoryService) {}
 
   ngOnInit(): void {
-    this.modalFactoryService.modalObservable.subscribe((openModalData) => {
+    this.modalFactoryServiceSubscription = this.modalFactoryService.modalObservable.subscribe((openModalData) => {
       this.launchModal(openModalData);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.modalFactoryServiceSubscription.unsubscribe();
   }
 
   private launchModal(openModalData: OpenModalData) {

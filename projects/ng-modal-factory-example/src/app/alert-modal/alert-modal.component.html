@@ -1,1 +1,12 @@
-<p>alert-modal works!</p>
+<clr-modal [(clrModalOpen)]="modalOpen">
+    <h3 class="modal-title">
+        <ng-container>{{headline}}</ng-container>
+    </h3>
+    <div class="modal-body">
+        <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
+    </div>
+    <div class="modal-footer">
+        <button *ngFor="let button of buttons" [disabled]="button.disabled" type="button"
+            [class]="getCssClasses(button)" (click)="buttonClick(button)">{{ button.text }}</button>
+    </div>
+</clr-modal>

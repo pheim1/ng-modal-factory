@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { ModalFactoryService } from 'dist/ng-modal-factory';
+import { AlertModalData, ModalFactoryService } from 'dist/ng-modal-factory';
+import { BaseModalData } from 'projects/ng-modal-factory/src/public-api';
 import { AlertModalComponent } from './alert-modal/alert-modal.component';
 
 @Component({
@@ -15,9 +16,10 @@ export class AppComponent {
 
   public openModal()
   {
-    this.modalFactoryService.openNewAlertModal({
+    this.modalFactoryService.openNewModal<AlertModalData>({
       component: AlertModalComponent,
       inputs: {
+        headline: "My modal headline...",
         bodyTemplate: this.modalBody,
         buttons: [
           {
@@ -38,5 +40,7 @@ export class AppComponent {
         ],
       },
     });
+
+    /* this.modalFactoryService.openNewModal<BaseModalData>({component: AlertModalComponent}) */
   }
 }

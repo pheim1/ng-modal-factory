@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ModalFactoryModule, ModalFactoryOutletComponent } from 'dist/ng-modal-factory';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ModalFactoryModule } from 'dist/ng-modal-factory';
 
 import { AppComponent } from './app.component';
 import { AlertModalComponent } from './alert-modal/alert-modal.component';
+import { ClarityModule } from '@clr/angular';
 
 
 @NgModule({
@@ -13,6 +16,8 @@ import { AlertModalComponent } from './alert-modal/alert-modal.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    ClarityModule,
     ModalFactoryModule
   ],
   providers: [],
