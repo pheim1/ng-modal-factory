@@ -15,10 +15,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "lib:build": "ng build ng-modal-factory --prod",
-    "lib:dev": "ng build ng-modal-factory --prod --watch",
+    "lib:build": "ng build ng-modal-factory --configuration production",
+    "lib:dev": "ng build ng-modal-factory --configuration production --watch",
     "lib:publish": "cd dist\\ng-modal-factory && npm publish",
-    "lib:bp": "ng build ng-modal-factory --prod && cd dist/ng-modal-factory && npm publish"
+    "lib:bp": "ng build ng-modal-factory --configuration production && cd dist/ng-modal-factory && npm publish"
   },
   "private": true,
   "dependencies": {
