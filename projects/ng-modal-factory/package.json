@@ -1,6 +1,6 @@
 {
   "name": "ng-modal-factory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Philipp Heim",
   "license": "MIT",
   "keywords": ["angular"],
@@ -8,8 +8,8 @@
   "bugs": "https://github.com/pheim1/ng-modal-factory/issues",
   "private": false,
   "peerDependencies": {
-    "@angular/common": "^11.2.0",
-    "@angular/core": "^11.2.0",
+    "@angular/common": "^13.3.9",
+    "@angular/core": "^13.3.9",
     "rxjs": "~6.6.0"
   },
   "dependencies": {
