@@ -29,7 +29,7 @@ export class ModalFactoryOutletComponent implements OnInit, OnDestroy {
 
   private launchModal(openModalData: OpenModalData) {
     this.outlet.clear();
-    this.outlet.createComponent(openModalData.factory, null, openModalData.injector);
+    this.outlet.createComponent(openModalData.factory, 0, openModalData.injector);
   }
 
 }
