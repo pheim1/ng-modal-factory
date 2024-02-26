@@ -57,7 +57,8 @@
             "styles": [
               "projects/ng-modal-factory-example/src/styles.css",
               "node_modules/@clr/icons/clr-icons.min.css",
-              "node_modules/@clr/ui/clr-ui.min.css"
+              "node_modules/@clr/ui/clr-ui.min.css",
+              "node_modules/@cds/core/global.min.css"
             ],
             "scripts": [
               "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
@@ -98,18 +99,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-modal-factory-example:build"
+            "buildTarget": "ng-modal-factory-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-modal-factory-example:build:production"
+              "buildTarget": "ng-modal-factory-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-modal-factory-example:build"
+            "buildTarget": "ng-modal-factory-example:build"
           }
         },
         "test": {
