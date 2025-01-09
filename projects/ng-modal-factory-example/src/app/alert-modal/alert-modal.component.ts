@@ -2,9 +2,10 @@ import { Component, Inject, OnDestroy, OnInit, Optional, TemplateRef } from '@an
 import { ClarityModalButton } from 'ng-modal-factory';
 
 @Component({
-  selector: 'app-alert-modal',
-  templateUrl: './alert-modal.component.html',
-  styleUrls: ['./alert-modal.component.css']
+    selector: 'app-alert-modal',
+    templateUrl: './alert-modal.component.html',
+    styleUrls: ['./alert-modal.component.css'],
+    standalone: false
 })
 export class AlertModalComponent {
 
