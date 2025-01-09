@@ -42,12 +42,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ng-modal-factory-example",
+            "outputPath": {
+              "base": "dist/ng-modal-factory-example"
+            },
             "index": "projects/ng-modal-factory-example/src/index.html",
-            "main": "projects/ng-modal-factory-example/src/main.ts",
-            "polyfills": "projects/ng-modal-factory-example/src/polyfills.ts",
+            "polyfills": [
+              "projects/ng-modal-factory-example/src/polyfills.ts"
+            ],
             "tsConfig": "projects/ng-modal-factory-example/tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -64,7 +67,8 @@
               "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
               "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
               "node_modules/@clr/icons/clr-icons.min.js"
-            ]
+            ],
+            "browser": "projects/ng-modal-factory-example/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -79,8 +83,6 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",

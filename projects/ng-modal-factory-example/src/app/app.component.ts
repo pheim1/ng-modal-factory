@@ -4,9 +4,10 @@ import { BaseModalData } from 'projects/ng-modal-factory/src/public-api';
 import { AlertModalComponent } from './alert-modal/alert-modal.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    standalone: false
 })
 export class AppComponent {
 
