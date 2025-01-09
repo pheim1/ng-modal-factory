@@ -3,12 +3,12 @@ import { Subscription } from 'rxjs';
 import { ModalFactoryService } from './modal-factory.service';
 
 @Component({
-  selector: 'ng-modal-factory-outlet',
-  template: `
+    selector: 'ng-modal-factory-outlet',
+    template: `
     <ng-container #outlet></ng-container>
   `,
-  styles: [
-  ]
+    styles: [],
+    standalone: false
 })
 export class ModalFactoryOutletComponent implements OnInit, OnDestroy {
 
