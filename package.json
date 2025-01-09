@@ -1,6 +1,6 @@
 {
   "name": "ng-modal-factory",
-  "version": "17.0.0",
+  "version": "18.0.0",
   "author": "Philipp Heim",
   "license": "MIT",
   "keywords": [
@@ -31,11 +31,10 @@
     "@angular/platform-browser": "^18.2.13",
     "@angular/platform-browser-dynamic": "^18.2.13",
     "@angular/router": "^18.2.13",
-    "@cds/core": "^6.9.2",
     "@clr/angular": "^17.5.0",
     "@clr/icons": "^13.0.2",
     "@clr/ui": "^17.5.0",
-    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "@webcomponents/webcomponentsjs": "^2.8.0",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",
     "zone.js": "~0.14.10"
@@ -55,7 +54,6 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.1.0",
     "ng-packagr": "^18.2.1",
-    "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~5.5.4"
