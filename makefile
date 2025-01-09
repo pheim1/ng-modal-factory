@@ -6,7 +6,7 @@ angular-update-wrapper:
 	ng update @angular/core@latest @angular/cli@latest
 
 clarity-update-wrapper:
-	ng update @clr/ui @cds/core
+	ng update @clr/ui @clr/angular @cds/core
 
 
 define HELP_MESSAGE
