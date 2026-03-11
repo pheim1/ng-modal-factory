@@ -1,5 +1,13 @@
-import { Component, Inject, OnDestroy, OnInit, Optional, TemplateRef } from '@angular/core';
+import { Component, inject, InjectionToken, TemplateRef } from '@angular/core';
 import { ClarityModalButton } from 'ng-modal-factory';
+
+export interface AlertModalInputs {
+  headline?: string;
+  bodyTemplate?: TemplateRef<any>;
+  buttons: ClarityModalButton[];
+}
+
+export const ALERT_DATA = new InjectionToken<AlertModalInputs>('alertData');
 
 @Component({
     selector: 'app-alert-modal',
@@ -10,12 +18,7 @@ import { ClarityModalButton } from 'ng-modal-factory';
 export class AlertModalComponent {
 
   modalOpen: boolean = true;
-
-  constructor(@Inject('buttons') public buttons: ClarityModalButton[], 
-              @Optional()
-              @Inject('bodyTemplate') public bodyTemplate: TemplateRef<any>,
-              @Optional()
-              @Inject('headline') public headline: string) {}
+  data = inject(ALERT_DATA);
 
   public buttonClick(button: ClarityModalButton) {
     button.click();
