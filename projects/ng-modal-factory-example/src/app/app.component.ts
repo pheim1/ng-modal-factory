@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { AlertModalData, ModalFactoryService } from 'dist/ng-modal-factory';
-import { BaseModalData } from 'projects/ng-modal-factory/src/public-api';
+import { AlertModalData, ModalFactoryService } from 'ng-modal-factory';
 import { AlertModalComponent } from './alert-modal/alert-modal.component';
 
 @Component({

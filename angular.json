@@ -52,7 +52,6 @@
               "projects/ng-modal-factory-example/src/polyfills.ts"
             ],
             "tsConfig": "projects/ng-modal-factory-example/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/ng-modal-factory-example/src/favicon.ico",
               "projects/ng-modal-factory-example/src/assets"
@@ -60,8 +59,7 @@
             "styles": [
               "projects/ng-modal-factory-example/src/styles.css",
               "node_modules/@clr/icons/clr-icons.min.css",
-              "node_modules/@clr/ui/clr-ui.min.css",
-              "node_modules/@cds/core/global.min.css"
+              "node_modules/@clr/ui/clr-ui.min.css"
             ],
             "scripts": [
               "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
@@ -128,18 +126,6 @@
             ],
             "styles": ["projects/ng-modal-factory-example/src/styles.css"],
             "scripts": []
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/ng-modal-factory-example/e2e/protractor.conf.js",
-            "devServerTarget": "ng-modal-factory-example:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ng-modal-factory-example:serve:production"
-            }
           }
         }
       }

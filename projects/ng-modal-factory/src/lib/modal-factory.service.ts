@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, Injectable, Injector, TemplateRef } from '@angular/core';
+import { Injectable, Injector, TemplateRef } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { OpenModalData } from './modal-factory-outlet.component';
 
@@ -10,10 +10,8 @@ export class ModalFactoryService {
   private modalSubject: Subject<OpenModalData> = new Subject();
   public modalObservable: Observable<OpenModalData> = this.modalSubject.asObservable();
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
-
   /**
-   * Opens a new modal. The povided component will be instantiated and rendered inside of the modal outlet. 
+   * Opens a new modal. The provided component will be instantiated and rendered inside of the modal outlet.
    * So make sure to place the ```<ng-modal-factory-outlet>```.
    * @param data The provided data which at least contains the component which will be displayed.
    */
@@ -27,9 +25,8 @@ export class ModalFactoryService {
     }));
 
     const injector = Injector.create({ providers: inputProviders });
-    const factory = this.componentFactoryResolver.resolveComponentFactory(data.component);
 
-    this.modalSubject.next({ factory: factory, injector: injector });
+    this.modalSubject.next({ component: data.component, injector: injector });
   }
 }
 
