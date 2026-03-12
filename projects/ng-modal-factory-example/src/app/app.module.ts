@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
 import { ModalFactoryModule } from 'ng-modal-factory';
 
 import { AppComponent } from './app.component';
@@ -19,7 +17,7 @@ import { ClarityModule } from '@clr/angular';
     ClarityModule,
     ModalFactoryModule
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
