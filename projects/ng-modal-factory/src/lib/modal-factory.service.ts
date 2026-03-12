@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, Injectable, Injector, TemplateRef } from '@angular/core';
+import { InjectionToken, Injectable, Injector, StaticProvider } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { OpenModalData } from './modal-factory-outlet.component';
 
@@ -10,26 +10,27 @@ export class ModalFactoryService {
   private modalSubject: Subject<OpenModalData> = new Subject();
   public modalObservable: Observable<OpenModalData> = this.modalSubject.asObservable();
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
-
   /**
-   * Opens a new modal. The povided component will be instantiated and rendered inside of the modal outlet. 
+   * Opens a new modal. The provided component will be instantiated and rendered inside of the modal outlet.
    * So make sure to place the ```<ng-modal-factory-outlet>```.
    * @param data The provided data which at least contains the component which will be displayed.
    */
   public openNewModal<T extends BaseModalData>(data: T): void {
-    let defaults = { inputs: {} };
-    data = Object.assign({}, defaults, data);
+    let providers: StaticProvider[];
 
-    const inputProviders = Object.keys(data.inputs).map((inputName) => ({
-      provide: inputName,
-      useValue: data.inputs[inputName],
-    }));
+    if (data.token) {
+      providers = [{ provide: data.token, useValue: data.inputs }];
+    } else {
+      const inputs = data.inputs ?? {};
+      providers = Object.keys(inputs).map((inputName) => ({
+        provide: inputName,
+        useValue: (inputs as Record<string, any>)[inputName],
+      }));
+    }
 
-    const injector = Injector.create({ providers: inputProviders });
-    const factory = this.componentFactoryResolver.resolveComponentFactory(data.component);
+    const injector = Injector.create({ providers });
 
-    this.modalSubject.next({ factory: factory, injector: injector });
+    this.modalSubject.next({ component: data.component, injector });
   }
 }
 
@@ -42,15 +43,8 @@ export interface ClarityModalButton {
   click: () => void
 }
 
-export interface BaseModalData {
+export interface BaseModalData<T = any> {
   component: any;
-  inputs?: any;
-}
-
-export interface AlertModalData extends BaseModalData {
-  inputs: {
-    headline: string,
-    bodyTemplate: TemplateRef<any>,
-    buttons: ClarityModalButton[]
-  };
+  token?: InjectionToken<T>;
+  inputs?: T;
 }

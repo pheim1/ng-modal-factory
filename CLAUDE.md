@@ -1,0 +1,1 @@
+Treat the @AGENTS.md as your CLAUDE.md

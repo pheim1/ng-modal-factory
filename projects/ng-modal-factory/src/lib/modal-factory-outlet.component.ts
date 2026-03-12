@@ -8,7 +8,7 @@ import { ModalFactoryService } from './modal-factory.service';
     <ng-container #outlet></ng-container>
   `,
     styles: [],
-    standalone: false
+    standalone: true
 })
 export class ModalFactoryOutletComponent implements OnInit, OnDestroy {
 
@@ -29,12 +29,12 @@ export class ModalFactoryOutletComponent implements OnInit, OnDestroy {
 
   private launchModal(openModalData: OpenModalData) {
     this.outlet.clear();
-    this.outlet.createComponent(openModalData.factory, 0, openModalData.injector);
+    this.outlet.createComponent(openModalData.component, { injector: openModalData.injector });
   }
 
 }
 
 export interface OpenModalData {
-  factory: any,
+  component: any,
   injector?: any
 }
